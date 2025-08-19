@@ -1,0 +1,43 @@
+1.Write a query to output the table 'Customer'. Limit your results to 3 rows.
+
+Expected output
+┌─────────────┬───────────────┬──────────────┐
+│ Customer_id │ Customer_Name │ Customer_Age │
+├─────────────┼───────────────┼──────────────┤
+│ 1           │ John          │ 15           │
+│ 2           │ Sara          │ 16           │
+│ 3           │ Adam          │ 17           │
+└─────────────┴───────────────┴──────────────┘
+
+select * from Customer
+Limit 3 ;
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+2.Your database 'Customer' has the following columns
+
+Customer_id (INT)
+Customer_Name (VARCHAR)
+Customer_Age (INT)
+
+  Your database 'Purchase' has the following columns
+
+Purchase_id (INT)
+Customer_id (INT)
+Purchase_amt (INT)
+Last_purchase_month (VARCHAR)
+
+  Write a query which does the following
+
+Join the table 'Customer' and 'Purchase' using Customer_id as the common column in the table.
+Output all entries from the joined table.
+
+  select  * from Customer
+ INNER JOIN Purchase
+ ON Customer.Customer_id = Purchase.Customer_id;
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+  3.
