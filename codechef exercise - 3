@@ -1,1 +1,33 @@
-1.
+1.Project - Union operation
+Each supermarket has items in its store and additional items in its warehouse.
+Let us find out the combined list of items available.
+
+Task
+Write a query to do the following
+
+Output a table with the list of all items in the supermarket.
+The table 'Item' has the list of items in the store and the table 'Item_adn' has the list of items in the warehouse
+Expected output
+┌─────────┬───────────┐
+│ Item_id │ Item_Name │
+├─────────┼───────────┤
+│ 1       │ Apple     │
+│ 2       │ Mango     │
+│ 3       │ Potato    │
+│ 4       │ Grapes    │
+│ 5       │ Oranges   │
+│ 6       │ Pineapple │
+└─────────┴───────────┘
+The tables 'Item' and 'Item_adn' have the following columns
+
+Item_id (INT)
+Item_Name (VARCHAR)
+
+select * from Item
+union
+select * from Item_adn;
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+2.
