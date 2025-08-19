@@ -30,4 +30,17 @@ select * from Item_adn;
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 
-2.
+2.Write a query to output the first 3 rows of the table 'food'
+
+Expected output
+┌──────┬────────────┬────────┬─────────────┐
+│ f_id │   f_name   │ f_cost │   f_type    │
+├──────┼────────────┼────────┼─────────────┤
+│ 1    │ Pizza      │ 10     │ Continental │
+│ 2    │ Burger     │ 8      │ Continental │
+│ 3    │ Fried Rice │ 12     │ Chinese     │
+└──────┴────────────┴────────┴─────────────┘
+
+
+select * from food 
+limit 3;
