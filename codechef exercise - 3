@@ -44,3 +44,31 @@ Expected output
 
 select * from food 
 limit 3;
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+3.Write a query to fetch Name and type of the food from the table 'food' which has got rating less than 3 in the table 'ratings'.
+
+Expected output
+┌────────┬─────────┐
+│ f_name │ f_type  │
+├────────┼─────────┤
+│ Tacos  │ Mexican │
+└────────┴─────────┘
+Table 'food' has the following columns:
+
+f_id (int)
+f_name (text)
+f_cost (int)
+f_type (int).
+Table 'ratings' has the following columns:
+
+f_id (int)
+f_rating (text).
+
+select food.f_name,food.f_type 
+from food
+join ratings on food.f_id = ratings.f_id
+where CAST (ratings.f_rating AS INT )<3;
+
