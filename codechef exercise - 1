@@ -30,5 +30,49 @@ select
  c.prof_id
  from student s
  left join course c on s.Course_id = c.Course_id;
+
+
+2.Write a query to do the following
+
+Cross join the table 'student' and 'course' and check out all possible courses a student can opt.
+Output only two columns, the name of the student as 'St_Name' and courses as 'Course_Name'.
+expected output:
+┌───────────────┬──────────────────────────────────┐
+│    St_Name    │           Course_Name            │
+├───────────────┼──────────────────────────────────┤
+│ John Smith    │ Introduction to Computer Science │
+│ John Smith    │ World History II                 │
+│ John Smith    │ Linear Algebra                   │
+│ John Smith    │ Advanced Writing                 │
+│ John Smith    │ Principles of Bio-technology     │
+│ Emily Brown   │ Introduction to Computer Science │
+│ Emily Brown   │ World History II                 │
+│ Emily Brown   │ Linear Algebra                   │
+│ Emily Brown   │ Advanced Writing                 │
+│ Emily Brown   │ Principles of Bio-technology     │
+│ David Lee     │ Introduction to Computer Science │
+│ David Lee     │ World History II                 │
+│ David Lee     │ Linear Algebra                   │
+│ David Lee     │ Advanced Writing                 │
+│ David Lee     │ Principles of Bio-technology     │
+│ Sarah Johnson │ Introduction to Computer Science │
+│ Sarah Johnson │ World History II                 │
+│ Sarah Johnson │ Linear Algebra                   │
+│ Sarah Johnson │ Advanced Writing                 │
+│ Sarah Johnson │ Principles of Bio-technology     │
+│ Michael Chen  │ Introduction to Computer Science │
+│ Michael Chen  │ World History II                 │
+│ Michael Chen  │ Linear Algebra                   │
+│ Michael Chen  │ Advanced Writing                 │
+│ Michael Chen  │ Principles of Bio-technology     │
+└───────────────┴──────────────────────────────────┘
+
+
+select 
+student.St_Name,
+course.Course_Name
+from student 
+cross join 
+course   ;            
  
  
