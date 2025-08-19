@@ -38,4 +38,27 @@ f_rating (text).
 --------------------------------------------------------------------------------------------------------------------------------------
 
 
-  2.
+  2.Write a query to retrieve the names of food items which cost less than the average cost of 'Continental' food type(f_type).
+
+Expected output
+┌────────┐
+│ f_name │
+├────────┤
+│ Pizza  │
+│ Burger │
+│ Tacos  │
+└────────┘
+Table 'food' has the following columns:
+
+f_id (int)
+f_name (text)
+f_cost (int)
+f_type (text).
+
+select f_name
+from food
+where f_cost < (
+select avg(f_cost )
+from food
+where f_type = 'Continental'
+);
