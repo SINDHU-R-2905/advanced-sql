@@ -73,6 +73,17 @@ student.St_Name,
 course.Course_Name
 from student 
 cross join 
-course   ;            
+course   ;      
+
+3.Write a query using union to stack the table 'Arts' over 'Science' and output the final table
+
+Note:
+The UNION statmente removes the duplicate data in the new table formed.
+
+select * 
+from Arts
+union
+select *
+from Science ;
  
  
