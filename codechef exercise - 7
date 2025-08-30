@@ -1,0 +1,21 @@
+1.Combining tables with SQL
+Ok - lets use the concept.
+
+Write a query which does the following
+
+Join the tables 'student' and 'course'
+Uses 'Course_id' to match both the tables and output the joined table
+Output all entries from the joined table
+
+select 
+s.St_id,
+s.St_Name,
+s.Department,
+s.Course_id,
+c.Course_id,
+c.Course_Name,
+c.Credits,
+c.Prof_id
+from student s
+join course c
+on s.Course_id = c.Course_id;
