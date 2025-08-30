@@ -123,3 +123,21 @@ select
     (100 * sum(CASE WHEN AGE > 20 THEN fee ELSE 0 END) / SUM(Fee))AS Senior_Fee_Percentage
 from student
 group by department;
+
+
+
+5.Output the table 'Orders', limited to 5 entries.
+
+Expected output
+┌──────────┬──────────────────┬──────────┬──────────┬───────┬────────┐
+│ order_id │    item_name     │ cuisine  │ category │ price │ status │
+├──────────┼──────────────────┼──────────┼──────────┼───────┼────────┤
+│ 1        │ Veggie Burger    │ American │ Veg      │ 9.99  │ Sold   │
+│ 3        │ Margherita Pizza │ Italian  │ Veg      │ 14.99 │ Sold   │
+│ 4        │ Pepperoni Pizza  │ Italian  │ Non veg  │ 16.99 │ Sold   │
+│ 2        │ Veggie Burger    │ American │ Veg      │ 9.99  │ Sold   │
+│ 6        │ Pepperoni Pizza  │ Italian  │ Non veg  │ 16.99 │ Sold   │
+└──────────┴──────────────────┴──────────┴──────────┴───────┴────────┘
+
+select * from Orders
+limit 5;
