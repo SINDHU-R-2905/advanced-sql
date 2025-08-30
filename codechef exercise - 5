@@ -1,1 +1,25 @@
-1.
+1.Write a query to do the following
+
+Categorise the students based on the marks into grades.
+Marks Less than 50 - C,
+Marks between 50 and 80 - B,
+Marks more than 80 - A
+You need to output the following - 'Grades' and 'student_count'
+Give the Alias name for the CASE as 'Grades'
+Count the students in each category and assign it the alias 'student_count'
+Your table 'marks' has the following columns :
+
+St_id
+Marks
+
+
+select 
+CASE
+when marks < 50 then 'C'
+when marks between  50 and 80 then 'B'
+when marks > 80 then 'A'
+ELSE 'NA'
+end AS Grades,
+COUNT (*) AS Student_count
+from marks
+group by Grades;
