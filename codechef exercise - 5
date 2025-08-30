@@ -95,3 +95,31 @@ department,
 SUM(CASE WHEN AGE > 20 THEN FEE ELSE 0 END)AS Sum_Senior_Fee
 from student
 Group by department;
+
+4.Write a query to find the percentage of fee paid by the students, aged above 20 to the total fee by all the students across department.
+Alias the resulting percentage column as Senior_Fee_Percentage.
+Output the columns 'Department' and 'Senior_Fee_Percentage'.
+
+Expected output
+┌────────────┬───────────────────────┐
+│ Department │ Senior_Fee_Percentage │
+├────────────┼───────────────────────┤
+│ English    │ 75                    │
+│ History    │ 32                    │
+│ Math       │ 48                    │
+│ Science    │ 51                    │
+└────────────┴───────────────────────┘
+Your table 'student' has the following columns:
+
+St_id
+St_name
+Fee
+Department
+Age
+
+
+select
+department,
+100.0 * sum(CASE WHEN AGE > 20 THEN fee ELSE 0 END) / SUM(Fee) AS Senior_Fee_Percentage
+from student
+group by department;
