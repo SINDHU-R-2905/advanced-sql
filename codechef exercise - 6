@@ -1,4 +1,4 @@
-Project - CASE conditions with aggregation
+1.Project - CASE conditions with aggregation
 Write a query to group the dishes based on the price as:
 
 High - If Price more than 18
@@ -33,3 +33,32 @@ end AS Pay_Category,
 count(*) AS Dish_count
 from Orders
 group by Pay_Category;
+
+
+2.Project - Conditional SUM
+Write a query to do the following
+
+Find the sum of prices of the dishes fall that under the category 'Non veg' for each cuisine.
+The output table should have the types of Cuisines and the sum of prices of the 'Non veg' dishes(mentioned under the column 'category') for each cuisine. Alias the sum function as 'Non_Veg_Price'.
+Expected output
+┌──────────┬───────────────┐
+│ cuisine  │ Non_Veg_Price │
+├──────────┼───────────────┤
+│ American │ 0             │
+│ Italian  │ 80.95         │
+│ Thai     │ 0             │
+└──────────┴───────────────┘
+Your table 'Orders' has the following fields:
+
+order_id INT PRIMARY KEY,
+item_name VARCHAR(255),
+cuisine VARCHAR(255) ,
+category VARCHAR(255) ,
+price DECIMAL(10,2),
+status VARCHAR(255)
+
+
+        select Cuisine,
+sum (case when category = 'Non veg' then price else 0 end)AS Non_Veg_Price
+from Orders
+group by Cuisine;
