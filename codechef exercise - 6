@@ -85,3 +85,29 @@ status VARCHAR(255)
 select round (
 100.0 * sum (case when Cuisine = 'American' then price else 0 end) / sum (price),2)AS American_Revenue 
 from Orders;
+
+4.Consider a supermarket database
+
+Table 'fruit' has the list of all fruits available in the market(few of them could be out of stock).
+Table 'inventory' has the updated list of items in the supermarket.
+Write a query to find the list of fruits available in the supermarket. (f_name column has the name of the fruits and inv_name has the name of the items in the inventory, you are suppose to output the name of the fruits.)
+
+Expected output
+┌────────────┐
+│   f_name   │
+├────────────┤
+│ Banana     │
+│ Cherry     │
+│ Grape      │
+│ Kiwi       │
+│ Pear       │
+│ Pineapple  │
+│ Watermelon │
+└────────────┘
+
+select f_name
+from fruit
+intersect
+select inv_name
+from inventory;
+
