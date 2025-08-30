@@ -119,7 +119,7 @@ Age
 
 
 select
-department,
-100.0 * sum(CASE WHEN AGE > 20 THEN fee ELSE 0 END) / SUM(Fee) AS Senior_Fee_Percentage
+    department,
+    (100 * sum(CASE WHEN AGE > 20 THEN fee ELSE 0 END) / SUM(Fee))AS Senior_Fee_Percentage
 from student
 group by department;
